@@ -1,0 +1,36 @@
+{
+	"name": "x-object-iterable",
+	"description": "Iterate JavaScript objects",
+	"version": "0.0.0",
+	"author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+	"contributors": [
+		"Hoàng Văn Khải <hvksmr1996@gmail.com>"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ksxnodemodules/x-object-iterable.git"
+	},
+	"engines": {
+		"node": ">=5.0.0"
+	},
+	"dependencies": {
+		"x-iterable": ">= 2.4.2",
+		"simple-class-utils": ">=0.0.4 <2.0.0",
+		"simple-function-utils": ">= 2.1.2",
+		"x-iterable-tree": ">0.0.0 <2.0.0"
+	},
+	"main": "index.js",
+	"keywords": [
+		"object",
+		"iterate-object",
+		"object-iteration"
+	],
+	"bugs": {
+		"url": "https://github.com/ksxnodemodules/x-object-iterable/issues"
+	},
+	"homepage": "https://github.com/ksxnodemodules/x-object-iterable#readme",
+	"scripts": {
+		"test": "node --es-staging ./test/main.js"
+	}
+}
