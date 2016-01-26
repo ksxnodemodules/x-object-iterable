@@ -42,11 +42,16 @@
 		}
 
 		hasOwnPropertyName(pname) {
-			return this.getOwnPropertyNames().has(pname);
+			return this.getOwnPropertyNames().some(this.FIND_PROPERTY(pname));
 		}
 
 		hasOwnPropertySymbol(psymbol) {
-			return this.getOwnPropertySymbols().has(psymbol);
+			return this.getOwnPropertySymbols().some(this.FIND_PROPERTY(psymbol));
+		}
+
+		FIND_PROPERTY(property) {
+			return (element) =>
+				element.property === property;
 		}
 
 	};
