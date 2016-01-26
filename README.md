@@ -20,7 +20,7 @@ var object = {
 var clone = {};
 var iterable = new ObjectIterable(object);
 for (let element of iterable) {
-	Object.defineProperty(clone, element.name, element.descriptor);
+	Object.defineProperty(clone, element.property, element.descriptor);
 }
 console.log(clone);
 ```
