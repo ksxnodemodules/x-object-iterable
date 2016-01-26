@@ -16,7 +16,6 @@
 	},
 	"dependencies": {
 		"x-iterable": ">= 2.4.2",
-		"simple-class-utils": ">=0.0.4 <2.0.0",
 		"simple-function-utils": ">= 2.1.2",
 		"x-iterable-tree": ">0.0.0 <2.0.0"
 	},
