@@ -28,6 +28,10 @@
 			this.object[this.property] = value;
 		}
 
+		valueOf() {
+			return this.value;
+		}
+
 	}
 
 	module.exports = class extends Element {};

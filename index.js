@@ -33,6 +33,22 @@
 			return new EnumerablePropertyNames(this.object);
 		}
 
+		assign(target) {
+			this.forEach((element) => Object.defineProperty(target, element.property, element.descriptor));
+		}
+
+		hasOwnProperty(property) {
+			return this[typeof property === 'symbol' ? 'hasOwnPropertySymbol' : 'hasOwnPropertyName'](property);
+		}
+
+		hasOwnPropertyName(pname) {
+			return this.getOwnPropertyNames().has(pname);
+		}
+
+		hasOwnPropertySymbol(psymbol) {
+			return this.getOwnPropertySymbols().has(psymbol);
+		}
+
 	};
 
 	class ObjectIterable extends XIterable(PureObjectIterable) {};
