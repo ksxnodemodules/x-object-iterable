@@ -33,6 +33,10 @@
 			return new EnumerablePropertyNames(this.object);
 		}
 
+		assign(target) {
+			this.forEach((element) => Object.defineProperty(target, element[0], element[1]));
+		}
+
 	};
 
 	class ObjectIterable extends XIterable(PureObjectIterable) {};
