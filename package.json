@@ -1,7 +1,7 @@
 {
 	"name": "x-object-iterable",
 	"description": "Iterate JavaScript objects",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
 	"contributors": [
 		"Hoàng Văn Khải <hvksmr1996@gmail.com>"
@@ -15,10 +15,7 @@
 		"node": ">=5.0.0"
 	},
 	"dependencies": {
-		"x-iterable": ">= 2.4.2",
-		"simple-class-utils": ">=0.0.4 <2.0.0",
-		"simple-function-utils": ">= 2.1.2",
-		"x-iterable-tree": ">0.0.0 <2.0.0"
+		"x-iterable": ">= 2.4.2"
 	},
 	"main": "index.js",
 	"keywords": [
