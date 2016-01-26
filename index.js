@@ -51,7 +51,7 @@
 
 		FIND_PROPERTY(property) {
 			return (element) =>
-				element.property === property;
+				element.property == property;
 		}
 
 	};
