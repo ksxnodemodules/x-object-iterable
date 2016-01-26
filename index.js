@@ -34,7 +34,7 @@
 		}
 
 		assign(target) {
-			this.forEach((element) => Object.defineProperty(target, element[0], element[1]));
+			this.forEach((element) => Object.defineProperty(target, element.property, element.descriptor));
 		}
 
 	};
