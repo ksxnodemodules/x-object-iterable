@@ -24,4 +24,4 @@ npm test
 
 1. Open Node console with `--es-staging` flag
 
-2. Enter `require('x-object/test')`
+2. Enter `require('x-object-iterable/test')`
