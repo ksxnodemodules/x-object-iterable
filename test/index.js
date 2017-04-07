@@ -22,6 +22,6 @@
   module.exports = {
     object: object,
     clone: clone,
-    list: iterable.toArray()
+    list: Array.from(iterable)
   }
 })(module)
