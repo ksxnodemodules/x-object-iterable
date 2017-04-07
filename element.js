@@ -3,10 +3,6 @@
   'use strict'
 
   class Element extends Array {
-    constructor (object, property) {
-      super(object, property)
-    }
-
     get object () {
       return this[0]
     }
