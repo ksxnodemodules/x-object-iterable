@@ -1,5 +1,4 @@
 'use strict'
-
 var ObjectIterable = require('x-object-iterable')
 
 var object = {
@@ -10,7 +9,6 @@ var object = {
 }
 
 var clone = {}
-
 var iterable = new ObjectIterable(object)
 
 for (let element of iterable) {
