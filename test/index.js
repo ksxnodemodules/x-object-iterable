@@ -1,17 +1,17 @@
 'use strict'
-var ObjectIterable = require('x-object-iterable')
+const ObjectIterable = require('x-object-iterable')
 
-var object = {
+const object = {
   data: 12,
   get accessor () {
     return Math.random()
   }
 }
 
-var clone = {}
-var iterable = new ObjectIterable(object)
+const clone = {}
+const iterable = new ObjectIterable(object)
 
-for (let element of iterable) {
+for (const element of iterable) {
   Object.defineProperty(clone, element.property, element.descriptor)
 }
 
