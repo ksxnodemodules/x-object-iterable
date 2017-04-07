@@ -5,7 +5,7 @@
   var XIterable = require('x-iterable/create-class')
   var Element = require('./element.js')
 
-  var _key_iterator = Symbol.iterator
+  var iterator = Symbol.iterator
 
   var _list = (object, properties) =>
 		new XIterable.Yield(properties).transform((property) => new Element(object, property))
@@ -15,7 +15,7 @@
       this.object = object
     }
 
-    * [_key_iterator] () {
+    * [iterator] () {
       yield * this.getOwnPropertyNames()
       yield * this.getOwnPropertySymbols()
     }
