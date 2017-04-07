@@ -1,27 +1,24 @@
+'use strict'
 
-((module) => {
-  'use strict'
+var ObjectIterable = require('x-object-iterable')
 
-  var ObjectIterable = require('x-object-iterable')
-
-  var object = {
-    data: 12,
-    get accessor () {
-      return Math.random()
-    }
+var object = {
+  data: 12,
+  get accessor () {
+    return Math.random()
   }
+}
 
-  var clone = {}
+var clone = {}
 
-  var iterable = new ObjectIterable(object)
+var iterable = new ObjectIterable(object)
 
-  for (let element of iterable) {
-    Object.defineProperty(clone, element.property, element.descriptor)
-  }
+for (let element of iterable) {
+  Object.defineProperty(clone, element.property, element.descriptor)
+}
 
-  module.exports = {
-    object: object,
-    clone: clone,
-    list: Array.from(iterable)
-  }
-})(module)
+module.exports = {
+  object: object,
+  clone: clone,
+  list: Array.from(iterable)
+}
