@@ -1,2 +1,2 @@
 
-console.log(require('.'));
+console.log(require('.'))

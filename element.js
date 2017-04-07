@@ -1,39 +1,36 @@
 
 ((module) => {
-	'use strict';
+  'use strict'
 
-	class Element extends Array {
+  class Element extends Array {
+    constructor (object, property) {
+      super(object, property)
+    }
 
-		constructor(object, property) {
-			super(object, property);
-		}
+    get object () {
+      return this[0]
+    }
 
-		get object() {
-			return this[0];
-		}
+    get property () {
+      return this[1]
+    }
 
-		get property() {
-			return this[1];
-		}
+    get descriptor () {
+      return Object.getOwnPropertyDescriptor(this.object, this.property)
+    }
 
-		get descriptor() {
-			return Object.getOwnPropertyDescriptor(this.object, this.property);
-		}
+    get value () {
+      return this.object[this.property]
+    }
 
-		get value() {
-			return this.object[this.property];
-		}
+    set value (value) {
+      this.object[this.property] = value
+    }
 
-		set value(value) {
-			this.object[this.property] = value;
-		}
-
-		valueOf() {
-			return this.value;
-		}
-
+    valueOf () {
+      return this.value
+    }
 	}
 
-	module.exports = class extends Element {};
-
-})(module);
+  module.exports = class extends Element {}
+})(module)

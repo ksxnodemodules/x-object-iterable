@@ -1,73 +1,70 @@
 
 ((module) => {
-	'use strict';
+  'use strict'
 
-	var XIterable = require('x-iterable/create-class');
-	var Element = require('./element.js');
+  var XIterable = require('x-iterable/create-class')
+  var Element = require('./element.js')
 
-	var _key_iterator = Symbol.iterator;
+  var _key_iterator = Symbol.iterator
 
-	var _list = (object, properties) =>
-		new XIterable.Yield(properties).transform((property) => new Element(object, property));
+  var _list = (object, properties) =>
+		new XIterable.Yield(properties).transform((property) => new Element(object, property))
 
-	class PureObjectIterable {
+  class PureObjectIterable {
+    constructor (object) {
+      this.object = object
+    }
 
-		constructor(object) {
-			this.object = object;
-		}
+    * [_key_iterator] () {
+      yield * this.getOwnPropertyNames()
+      yield * this.getOwnPropertySymbols()
+    }
 
-		* [_key_iterator]() {
-			yield * this.getOwnPropertyNames();
-			yield * this.getOwnPropertySymbols();
-		}
+    getOwnPropertyNames () {
+      return _list(this.object, Object.getOwnPropertyNames(this.object))
+    }
 
-		getOwnPropertyNames() {
-			return _list(this.object, Object.getOwnPropertyNames(this.object));
-		}
+    getOwnPropertySymbols () {
+      return _list(this.object, Object.getOwnPropertySymbols(this.object))
+    }
 
-		getOwnPropertySymbols() {
-			return _list(this.object, Object.getOwnPropertySymbols(this.object));
-		}
+    getEnumerablePropertyNames () {
+      return new EnumerablePropertyNames(this.object)
+    }
 
-		getEnumerablePropertyNames() {
-			return new EnumerablePropertyNames(this.object);
-		}
+    assign (target) {
+      this.forEach(({property, descriptor}) => Object.defineProperty(target, property, descriptor))
+    }
 
-		assign(target) {
-			this.forEach(({property, descriptor}) => Object.defineProperty(target, property, descriptor));
-		}
+    hasOwnProperty (property) {
+      return this[typeof property === 'symbol' ? 'hasOwnPropertySymbol' : 'hasOwnPropertyName'](property)
+    }
 
-		hasOwnProperty(property) {
-			return this[typeof property === 'symbol' ? 'hasOwnPropertySymbol' : 'hasOwnPropertyName'](property);
-		}
+    hasOwnPropertyName (pname) {
+      return this.getOwnPropertyNames().some(this.FIND_PROPERTY(pname))
+    }
 
-		hasOwnPropertyName(pname) {
-			return this.getOwnPropertyNames().some(this.FIND_PROPERTY(pname));
-		}
+    hasOwnPropertySymbol (psymbol) {
+      return this.getOwnPropertySymbols().some(this.FIND_PROPERTY(psymbol))
+    }
 
-		hasOwnPropertySymbol(psymbol) {
-			return this.getOwnPropertySymbols().some(this.FIND_PROPERTY(psymbol));
-		}
-
-		FIND_PROPERTY(property) {
-			return (element) =>
-				element.property == property;
-		}
-
+    FIND_PROPERTY (property) {
+      return (element) =>
+				element.property == property
+    }
 	};
 
-	class ObjectIterable extends XIterable(PureObjectIterable) {};
+  class ObjectIterable extends XIterable(PureObjectIterable) {};
 
-	ObjectIterable.PureObjectIterable = ObjectIterable.Pure = ObjectIterable.Base = PureObjectIterable;
+  ObjectIterable.PureObjectIterable = ObjectIterable.Pure = ObjectIterable.Base = PureObjectIterable
 
-	module.exports = ObjectIterable;
+  module.exports = ObjectIterable
 
-	class EnumerablePropertyNames extends XIterable.fromGenerator(generateForIn) {}
+  class EnumerablePropertyNames extends XIterable.fromGenerator(generateForIn) {}
 
-	function * generateForIn(object) {
-		for (let pname in object) {
-			yield new Element(object, pname);
-		}
-	}
-
-})(module);
+  function * generateForIn (object) {
+    for (let pname in object) {
+      yield new Element(object, pname)
+    }
+  }
+})(module)
