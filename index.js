@@ -1,9 +1,9 @@
 'use strict'
-var XIterable = require('x-iterable/create-class')
-var Element = require('./element.js')
-var {iterator} = Symbol
+const XIterable = require('x-iterable/create-class')
+const Element = require('./element.js')
+const {iterator} = Symbol
 
-var _list = (object, properties) =>
+const _list = (object, properties) =>
   new XIterable.Yield(properties).mapOnce(property => new Element(object, property))
 
 class PureObjectIterable {
