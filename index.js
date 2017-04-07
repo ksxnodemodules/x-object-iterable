@@ -48,9 +48,9 @@ class PureObjectIterable {
     return (element) =>
 			element.property == property
   }
-};
+}
 
-class ObjectIterable extends XIterable(PureObjectIterable) {};
+class ObjectIterable extends XIterable(PureObjectIterable) {}
 ObjectIterable.PureObjectIterable = ObjectIterable.Pure = ObjectIterable.Base = PureObjectIterable
 module.exports = ObjectIterable
 class EnumerablePropertyNames extends XIterable.fromGenerator(generateForIn) {}
