@@ -1,10 +1,8 @@
 
 ((module) => {
   'use strict'
-
   var XIterable = require('x-iterable/create-class')
   var Element = require('./element.js')
-
   var {iterator} = Symbol
 
   var _list = (object, properties) =>
@@ -55,11 +53,8 @@
 	};
 
   class ObjectIterable extends XIterable(PureObjectIterable) {};
-
   ObjectIterable.PureObjectIterable = ObjectIterable.Pure = ObjectIterable.Base = PureObjectIterable
-
   module.exports = ObjectIterable
-
   class EnumerablePropertyNames extends XIterable.fromGenerator(generateForIn) {}
 
   function * generateForIn (object) {
