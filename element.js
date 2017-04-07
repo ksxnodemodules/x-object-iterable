@@ -26,7 +26,7 @@
     valueOf () {
       return this.value
     }
-	}
+  }
 
   module.exports = class extends Element {}
 })(module)

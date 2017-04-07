@@ -1,33 +1,33 @@
 {
-	"name": "x-object-iterable",
-	"description": "Iterate JavaScript objects",
-	"version": "0.1.1",
-	"author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
-	"contributors": [
-		"Hoàng Văn Khải <hvksmr1996@gmail.com>"
-	],
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ksxnodemodules/x-object-iterable.git"
-	},
-	"engines": {
-		"node": ">=6.0.0"
-	},
-	"dependencies": {
-		"x-iterable": ">= 2.4.2"
-	},
-	"main": "index.js",
-	"keywords": [
-		"object",
-		"iterate-object",
-		"object-iteration"
-	],
-	"bugs": {
-		"url": "https://github.com/ksxnodemodules/x-object-iterable/issues"
-	},
-	"homepage": "https://github.com/ksxnodemodules/x-object-iterable#readme",
-	"scripts": {
-		"test": "node --es-staging ./test/main.js"
-	}
+  "name": "x-object-iterable",
+  "description": "Iterate JavaScript objects",
+  "version": "0.1.1",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "contributors": [
+    "Hoàng Văn Khải <hvksmr1996@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodemodules/x-object-iterable.git"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "x-iterable": ">= 2.4.2"
+  },
+  "main": "index.js",
+  "keywords": [
+    "object",
+    "iterate-object",
+    "object-iteration"
+  ],
+  "bugs": {
+    "url": "https://github.com/ksxnodemodules/x-object-iterable/issues"
+  },
+  "homepage": "https://github.com/ksxnodemodules/x-object-iterable#readme",
+  "scripts": {
+    "test": "node --es-staging ./test/main.js"
+  }
 }

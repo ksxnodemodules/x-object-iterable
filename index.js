@@ -4,7 +4,7 @@ var Element = require('./element.js')
 var {iterator} = Symbol
 
 var _list = (object, properties) =>
-	new XIterable.Yield(properties).transform((property) => new Element(object, property))
+  new XIterable.Yield(properties).transform((property) => new Element(object, property))
 
 class PureObjectIterable {
   constructor (object) {
@@ -46,7 +46,7 @@ class PureObjectIterable {
 
   FIND_PROPERTY (property) {
     return (element) =>
-			element.property == property
+      element.property == property
   }
 }
 

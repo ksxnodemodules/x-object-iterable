@@ -1,10 +1,10 @@
 {
-	"engines": {
-		"node": ">=5.0.0"
-	},
-	"dependencies": {},
-	"main": "index.js",
-	"scripts": {
-		"test": "node --es-staging ./main.js"
-	}
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "dependencies": {},
+  "main": "index.js",
+  "scripts": {
+    "test": "node --es-staging ./main.js"
+  }
 }
