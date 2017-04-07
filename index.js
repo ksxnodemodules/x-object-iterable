@@ -56,7 +56,7 @@ module.exports = ObjectIterable
 class EnumerablePropertyNames extends XIterable.fromGenerator(generateForIn) {}
 
 function * generateForIn (object) {
-  for (let pname in object) {
+  for (const pname in object) {
     yield new Element(object, pname)
   }
 }
