@@ -1,5 +1,5 @@
 'use strict'
-const XIterable = require('x-iterable/create-class')
+const XIterable = require('x-iterable-base/template')
 const Element = require('./element.js')
 const {iterator} = Symbol
 
